@@ -1,0 +1,470 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2C19C8C720CEE5A3006EC6EF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C19C8C620CEE5A3006EC6EF /* AppDelegate.swift */; };
+		2C19C8C920CEE5A3006EC6EF /* ShortDistanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C19C8C820CEE5A3006EC6EF /* ShortDistanceViewController.swift */; };
+		2C19C8CC20CEE5A3006EC6EF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C19C8CA20CEE5A3006EC6EF /* Main.storyboard */; };
+		2C19C8CE20CEE5A4006EC6EF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C19C8CD20CEE5A4006EC6EF /* Assets.xcassets */; };
+		2C19C8D920CEE79D006EC6EF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2C19C8D820CEE79D006EC6EF /* GoogleService-Info.plist */; };
+		2C19C8DF20CF5DE2006EC6EF /* Raleway-v4020-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2C19C8DD20CF5DE2006EC6EF /* Raleway-v4020-SemiBold.otf */; };
+		2C19C8E020CF5DE2006EC6EF /* Raleway-v4020-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2C19C8DE20CF5DE2006EC6EF /* Raleway-v4020-Regular.otf */; };
+		2C82472E20CF6DC100AFF337 /* DropDownButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C82472D20CF6DC100AFF337 /* DropDownButton.swift */; };
+		2C82473120CF8B4300AFF337 /* extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C82473020CF8B4300AFF337 /* extension.swift */; };
+		2C82473320CF902000AFF337 /* DropDownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C82473220CF902000AFF337 /* DropDownView.swift */; };
+		2C82473920CFC3C200AFF337 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C82473620CFC3C200AFF337 /* Settings.swift */; };
+		2C82473A20CFC3C200AFF337 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C82473720CFC3C200AFF337 /* SettingsTableViewController.swift */; };
+		2C82473B20CFC3C200AFF337 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C82473820CFC3C200AFF337 /* Utils.swift */; };
+		2CFCBE1D20D0F3DF0082BFB6 /* CallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CFCBE1C20D0F3DF0082BFB6 /* CallViewController.swift */; };
+		431A8FF32675352E13CAED1A /* libPods-ISeeYou.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F2569F6B53649F838AAEAA4F /* libPods-ISeeYou.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		2C19C8C320CEE5A3006EC6EF /* ISeeYou.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ISeeYou.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2C19C8C620CEE5A3006EC6EF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		2C19C8C820CEE5A3006EC6EF /* ShortDistanceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortDistanceViewController.swift; sourceTree = "<group>"; };
+		2C19C8CB20CEE5A3006EC6EF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		2C19C8CD20CEE5A4006EC6EF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2C19C8D220CEE5A4006EC6EF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2C19C8D820CEE79D006EC6EF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
+		2C19C8DD20CF5DE2006EC6EF /* Raleway-v4020-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-v4020-SemiBold.otf"; sourceTree = "<group>"; };
+		2C19C8DE20CF5DE2006EC6EF /* Raleway-v4020-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-v4020-Regular.otf"; sourceTree = "<group>"; };
+		2C82472D20CF6DC100AFF337 /* DropDownButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownButton.swift; sourceTree = "<group>"; };
+		2C82473020CF8B4300AFF337 /* extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extension.swift; sourceTree = "<group>"; };
+		2C82473220CF902000AFF337 /* DropDownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownView.swift; sourceTree = "<group>"; };
+		2C82473620CFC3C200AFF337 /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		2C82473720CFC3C200AFF337 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
+		2C82473820CFC3C200AFF337 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		2CFCBE1C20D0F3DF0082BFB6 /* CallViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallViewController.swift; sourceTree = "<group>"; };
+		9232EA8D9CD5392739907C5C /* Pods-ISeeYou.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ISeeYou.release.xcconfig"; path = "Pods/Target Support Files/Pods-ISeeYou/Pods-ISeeYou.release.xcconfig"; sourceTree = "<group>"; };
+		978AB349B12B1D210E01387A /* Pods-ISeeYou.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ISeeYou.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ISeeYou/Pods-ISeeYou.debug.xcconfig"; sourceTree = "<group>"; };
+		F2569F6B53649F838AAEAA4F /* libPods-ISeeYou.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ISeeYou.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2C19C8C020CEE5A3006EC6EF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				431A8FF32675352E13CAED1A /* libPods-ISeeYou.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1CB7B939BF78B860EF733990 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F2569F6B53649F838AAEAA4F /* libPods-ISeeYou.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2C19C8BA20CEE5A3006EC6EF = {
+			isa = PBXGroup;
+			children = (
+				2C19C8C520CEE5A3006EC6EF /* ISeeYou */,
+				2C19C8C420CEE5A3006EC6EF /* Products */,
+				6B08D6EDABC5E0AD85C69788 /* Pods */,
+				1CB7B939BF78B860EF733990 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		2C19C8C420CEE5A3006EC6EF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2C19C8C320CEE5A3006EC6EF /* ISeeYou.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2C19C8C520CEE5A3006EC6EF /* ISeeYou */ = {
+			isa = PBXGroup;
+			children = (
+				2C82473520CFC38C00AFF337 /* Utils */,
+				2C82472F20CF8B2E00AFF337 /* extension */,
+				2C82472C20CF6D9900AFF337 /* customs */,
+				2C19C8DA20CEF23B006EC6EF /* fonts */,
+				2C19C8C820CEE5A3006EC6EF /* ShortDistanceViewController.swift */,
+				2CFCBE1C20D0F3DF0082BFB6 /* CallViewController.swift */,
+				2C19C8C620CEE5A3006EC6EF /* AppDelegate.swift */,
+				2C19C8CD20CEE5A4006EC6EF /* Assets.xcassets */,
+				2C19C8D220CEE5A4006EC6EF /* Info.plist */,
+				2C19C8D820CEE79D006EC6EF /* GoogleService-Info.plist */,
+				2C19C8CA20CEE5A3006EC6EF /* Main.storyboard */,
+			);
+			path = ISeeYou;
+			sourceTree = "<group>";
+		};
+		2C19C8DA20CEF23B006EC6EF /* fonts */ = {
+			isa = PBXGroup;
+			children = (
+				2C19C8DE20CF5DE2006EC6EF /* Raleway-v4020-Regular.otf */,
+				2C19C8DD20CF5DE2006EC6EF /* Raleway-v4020-SemiBold.otf */,
+			);
+			path = fonts;
+			sourceTree = "<group>";
+		};
+		2C82472C20CF6D9900AFF337 /* customs */ = {
+			isa = PBXGroup;
+			children = (
+				2C82472D20CF6DC100AFF337 /* DropDownButton.swift */,
+				2C82473220CF902000AFF337 /* DropDownView.swift */,
+			);
+			path = customs;
+			sourceTree = "<group>";
+		};
+		2C82472F20CF8B2E00AFF337 /* extension */ = {
+			isa = PBXGroup;
+			children = (
+				2C82473020CF8B4300AFF337 /* extension.swift */,
+			);
+			path = extension;
+			sourceTree = "<group>";
+		};
+		2C82473520CFC38C00AFF337 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				2C82473620CFC3C200AFF337 /* Settings.swift */,
+				2C82473720CFC3C200AFF337 /* SettingsTableViewController.swift */,
+				2C82473820CFC3C200AFF337 /* Utils.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		6B08D6EDABC5E0AD85C69788 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				978AB349B12B1D210E01387A /* Pods-ISeeYou.debug.xcconfig */,
+				9232EA8D9CD5392739907C5C /* Pods-ISeeYou.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2C19C8C220CEE5A3006EC6EF /* ISeeYou */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2C19C8D520CEE5A4006EC6EF /* Build configuration list for PBXNativeTarget "ISeeYou" */;
+			buildPhases = (
+				CFF2CE3FDD4F46EE74F44BCE /* [CP] Check Pods Manifest.lock */,
+				2C19C8BF20CEE5A3006EC6EF /* Sources */,
+				2C19C8C020CEE5A3006EC6EF /* Frameworks */,
+				2C19C8C120CEE5A3006EC6EF /* Resources */,
+				B6E9D553A6DDBFF611C0A745 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ISeeYou;
+			productName = ISeeYou;
+			productReference = 2C19C8C320CEE5A3006EC6EF /* ISeeYou.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2C19C8BB20CEE5A3006EC6EF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1000;
+				LastUpgradeCheck = 1000;
+				ORGANIZATIONNAME = "李嘉晟";
+				TargetAttributes = {
+					2C19C8C220CEE5A3006EC6EF = {
+						CreatedOnToolsVersion = 10.0;
+					};
+				};
+			};
+			buildConfigurationList = 2C19C8BE20CEE5A3006EC6EF /* Build configuration list for PBXProject "ISeeYou" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 2C19C8BA20CEE5A3006EC6EF;
+			productRefGroup = 2C19C8C420CEE5A3006EC6EF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2C19C8C220CEE5A3006EC6EF /* ISeeYou */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2C19C8C120CEE5A3006EC6EF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C19C8E020CF5DE2006EC6EF /* Raleway-v4020-Regular.otf in Resources */,
+				2C19C8D920CEE79D006EC6EF /* GoogleService-Info.plist in Resources */,
+				2C19C8CE20CEE5A4006EC6EF /* Assets.xcassets in Resources */,
+				2C19C8CC20CEE5A3006EC6EF /* Main.storyboard in Resources */,
+				2C19C8DF20CF5DE2006EC6EF /* Raleway-v4020-SemiBold.otf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		B6E9D553A6DDBFF611C0A745 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-ISeeYou/Pods-ISeeYou-frameworks.sh",
+				"${PODS_ROOT}/TwilioVideo/Build/iOS/TwilioVideo.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TwilioVideo.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ISeeYou/Pods-ISeeYou-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CFF2CE3FDD4F46EE74F44BCE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ISeeYou-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2C19C8BF20CEE5A3006EC6EF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C82473920CFC3C200AFF337 /* Settings.swift in Sources */,
+				2C82472E20CF6DC100AFF337 /* DropDownButton.swift in Sources */,
+				2C82473320CF902000AFF337 /* DropDownView.swift in Sources */,
+				2CFCBE1D20D0F3DF0082BFB6 /* CallViewController.swift in Sources */,
+				2C19C8C920CEE5A3006EC6EF /* ShortDistanceViewController.swift in Sources */,
+				2C19C8C720CEE5A3006EC6EF /* AppDelegate.swift in Sources */,
+				2C82473120CF8B4300AFF337 /* extension.swift in Sources */,
+				2C82473A20CFC3C200AFF337 /* SettingsTableViewController.swift in Sources */,
+				2C82473B20CFC3C200AFF337 /* Utils.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		2C19C8CA20CEE5A3006EC6EF /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2C19C8CB20CEE5A3006EC6EF /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		2C19C8D320CEE5A4006EC6EF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		2C19C8D420CEE5A4006EC6EF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		2C19C8D620CEE5A4006EC6EF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 978AB349B12B1D210E01387A /* Pods-ISeeYou.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2T48SSSEYJ;
+				INFOPLIST_FILE = ISeeYou/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.iui.johnson.ISeeYou;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		2C19C8D720CEE5A4006EC6EF /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9232EA8D9CD5392739907C5C /* Pods-ISeeYou.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2T48SSSEYJ;
+				INFOPLIST_FILE = ISeeYou/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.iui.johnson.ISeeYou;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2C19C8BE20CEE5A3006EC6EF /* Build configuration list for PBXProject "ISeeYou" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2C19C8D320CEE5A4006EC6EF /* Debug */,
+				2C19C8D420CEE5A4006EC6EF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2C19C8D520CEE5A4006EC6EF /* Build configuration list for PBXNativeTarget "ISeeYou" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2C19C8D620CEE5A4006EC6EF /* Debug */,
+				2C19C8D720CEE5A4006EC6EF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2C19C8BB20CEE5A3006EC6EF /* Project object */;
+}
