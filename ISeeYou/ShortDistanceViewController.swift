@@ -7,11 +7,19 @@
 //
 
 import UIKit
+import Foundation
 import TwilioVideo
 import MapKit
+import CoreLocation
+import Firebase
 
-class ShortDistanceViewController: UIViewController {
+class ShortDistanceViewController: UIViewController, MKMapViewDelegate {
 
+    let locationManager = CLLocationManager()
+    var userLocation2D: CLLocationCoordinate2D?
+    var targetLocation2D: CLLocationCoordinate2D?
+    var ref: DatabaseReference!
+    
     var currentMode = Mode.none
     var safeDistance: Int {
         get {
@@ -42,6 +50,9 @@ class ShortDistanceViewController: UIViewController {
     var remoteParticipant: TVIRemoteParticipant?
     var remoteView: TVIVideoView?
     
+    // data
+    var userDefaults: UserDefaults!
+    
     // TVIVideoView created from a storyboard
     @IBOutlet weak var connectButton: UIButton!
     @IBOutlet weak var disconnectButton: UIButton!
@@ -53,6 +64,24 @@ class ShortDistanceViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        ref = Database.database().reference().child("coordinate")
+        ref.observe(.value, with: {(snapshot) in
+            let coordinate = snapshot.value as! [String: AnyObject]
+            let lon = coordinate["lon"] as! Double
+            let lat = coordinate["lat"] as! Double
+            let lonDegree = CLLocationDegrees(lon)
+            let latDegree = CLLocationDegrees(lat)
+            self.targetLocation2D = CLLocationCoordinate2DMake(latDegree, lonDegree)
+            
+            let span = MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)
+            var region = MKCoordinateRegion(center: self.targetLocation2D!, span: span)
+            region.center.latitude -= 0.0005
+            self.mapView.setRegion(region, animated: true)
+            print(self.targetLocation2D)
+        })
+        userDefaults = UserDefaults.standard
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
         
         setupRemoteVideoView()
         
@@ -74,21 +103,30 @@ class ShortDistanceViewController: UIViewController {
         dropDownButton.heightAnchor.constraint(equalToConstant: 35).isActive = true
         
         // 地圖UI設定, 一開始隱藏
-        self.mapView.isHidden = true
+        mapView.delegate = self
+        mapView.showsUserLocation = true
         mapView.translatesAutoresizingMaskIntoConstraints = false
         mapView.leftAnchor.constraint(equalTo: self.view.leftAnchor).isActive = true
         mapView.rightAnchor.constraint(equalTo: self.view.rightAnchor).isActive = true
         mapView.topAnchor.constraint(equalTo: self.view.topAnchor).isActive = true
         mapView.bottomAnchor.constraint(equalTo: self.remoteView!.topAnchor, constant: 10).isActive = true
-        
+        mapView.isHidden = true
         // 顯示距離方塊UI設定
         distanceRangeView.layer.cornerRadius = distanceRangeView.frame.width / 2
         distanceRangeView.backgroundColor = UIColor.init(red: 34, green: 98, blue: 98, alpha: 0.3)
+        distanceRangeView.isUserInteractionEnabled = false
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.setNavigationBarHidden(true, animated: true)
+        if let mode = userDefaults.object(forKey: "mode" ) as? String {
+            dropDownButton.setTitle(mode, for: .normal)
+            self.currentMode = Mode(rawValue: mode)!
+            updateModeUI()
+        }
+        
+        //connect()
     }
     
     // 隨著目前使用模式顯示或隱藏mapview
@@ -107,13 +145,30 @@ class ShortDistanceViewController: UIViewController {
         self.distanceLabel.text = String(self.safeDistance)
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        // 1. 還沒有詢問過用戶以獲得權限
+        if CLLocationManager.authorizationStatus() == .notDetermined {
+            locationManager.requestAlwaysAuthorization()
+        }
+            // 2. 用戶不同意
+        else if CLLocationManager.authorizationStatus() == .denied {
+            print("Location services were previously denied. Please enable location services for this app in Settings.")
+        }
+            // 3. 用戶已經同意
+        else if CLLocationManager.authorizationStatus() == .authorizedAlways {
+            locationManager.startUpdatingLocation()
+        }
+    }
+    
     // remoteView設定
     func setupRemoteVideoView() {
         
         // Creating `TVIVideoView` programmatically
         self.remoteView = TVIVideoView.init(frame: CGRect.zero, delegate:self)
         self.remoteView!.translatesAutoresizingMaskIntoConstraints = false
-        self.view.insertSubview(remoteView!, at: 2)
+        self.view.insertSubview(remoteView!, at: 4)
 
         // `TVIVideoView` supports scaleToFill, scaleAspectFill and scaleAspectFit
         // scaleAspectFit is the default mode when you create `TVIVideoView` programmatically.
@@ -129,6 +184,55 @@ class ShortDistanceViewController: UIViewController {
 
     }
 
+    func connect() {
+        // Configure access token either from server or manually.
+        // If the default wasn't changed, try fetching from server.
+        if (accessToken == "TWILIO_ACCESS_TOKEN") {
+            do {
+                accessToken = try TokenUtils.fetchToken(url: tokenUrl)
+                print(accessToken)
+            } catch {
+                let message = "Failed to fetch access token"
+                logMessage(messageText: message)
+                return
+            }
+        }
+        
+        // Prepare local media which we will share with Room Participants.
+        self.prepareLocalMedia()
+        
+        // Preparing the connect options with the access token that we fetched (or hardcoded).
+        let connectOptions = TVIConnectOptions.init(token: accessToken) { (builder) in
+            // Use the local media that we prepared earlier.
+            builder.audioTracks = self.localAudioTrack != nil ? [self.localAudioTrack!] : [TVILocalAudioTrack]()
+            builder.videoTracks = self.localVideoTrack != nil ? [self.localVideoTrack!] : [TVILocalVideoTrack]()
+            
+            // Use the preferred audio codec
+            if let preferredAudioCodec = Settings.shared.audioCodec {
+                builder.preferredAudioCodecs = [preferredAudioCodec]
+            }
+            
+            // Use the preferred video codec
+            if let preferredVideoCodec = Settings.shared.videoCodec {
+                builder.preferredVideoCodecs = [preferredVideoCodec]
+            }
+            
+            // Use the preferred encoding parameters
+            if let encodingParameters = Settings.shared.getEncodingParameters() {
+                builder.encodingParameters = encodingParameters
+            }
+            
+            // The name of the Room where the Client will attempt to connect to. Please note that if you pass an empty
+            // Room `name`, the Client will create one for you. You can get the name or sid from any connected Room.
+            builder.roomName = "iseeyou"
+        }
+        // Connect to the Room using the options we provided.
+        room = TwilioVideo.connect(with: connectOptions, delegate: self)
+        
+        logMessage(messageText: "Attempting to connect to room \(room!.name)")
+        
+        self.showRoomUI(inRoom: true)
+    }
     // MARK: Twilo IBActions
     @IBAction func connect(sender: AnyObject) {
         // Configure access token either from server or manually.
@@ -416,9 +520,26 @@ extension ShortDistanceViewController: dropDownProtocol {
     func dropDownPressed(mode: Mode) {
         self.dropDownButton.setTitle(mode.rawValue, for: .normal)
         self.currentMode = mode
+        userDefaults.set(mode.rawValue, forKey: "mode")
         self.updateModeUI()
         self.dropDownButton.dismissDropDown()
     }
+}
+
+
+
+extension ShortDistanceViewController: CLLocationManagerDelegate {
+//    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+//        let lon = (locations.last?.coordinate.longitude)!
+//        let lat = (locations.last?.coordinate.latitude)!
+//        userLocation2D = CLLocationCoordinate2DMake(lat, lon)
+//
+//        let span = MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)
+//        var region = MKCoordinateRegion(center: userLocation2D!, span: span)
+//        region.center.latitude -= 0.0005
+//        mapView.setRegion(region, animated: true)
+//
+//    }
 }
 
 enum Mode: String{
