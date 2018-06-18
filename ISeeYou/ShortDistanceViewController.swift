@@ -115,6 +115,14 @@ class ShortDistanceViewController: UIViewController, MKMapViewDelegate {
         distanceRangeView.layer.cornerRadius = distanceRangeView.frame.width / 2
         distanceRangeView.backgroundColor = UIColor.init(red: 34, green: 98, blue: 98, alpha: 0.3)
         distanceRangeView.isUserInteractionEnabled = false
+        
+        //旋轉指針
+        ref = Database.database().reference().child("arrow")
+        ref.observe(.value, with: {(snapshot) in
+            let arrow = snapshot.value as! [String: AnyObject]
+            let angle = arrow["angle"] as! Double
+            self.arrow.transform = CGAffineTransform(rotationAngle: CGFloat(angle))
+        })
     }
     
     override func viewWillAppear(_ animated: Bool) {
