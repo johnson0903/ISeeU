@@ -24,10 +24,11 @@ class CallViewController: UIViewController {
     }
     
     var isRinging = false
-    
+    var image = ""
     override func viewDidLoad() {
         super.viewDidLoad()
         landMarkImageView.layer.cornerRadius = 10
+        landMarkImageView.image = UIImage(named: image)
     }
     
     override func viewWillAppear(_ animated: Bool) {

@@ -126,7 +126,20 @@ class ShortDistanceViewController: UIViewController, MKMapViewDelegate {
             updateModeUI()
         }
         
-        //connect()
+        connect()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ShowCallView" {
+            var image = ""
+            if currentMode == .outdoor {
+                image = "far"
+            } else {
+                image = "indoor"
+            }
+            let callViewController = segue.destination as! CallViewController
+            callViewController.image = image
+        }
     }
     
     // 隨著目前使用模式顯示或隱藏mapview
